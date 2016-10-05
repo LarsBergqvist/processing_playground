@@ -1,19 +1,25 @@
-
+import processing.core.PApplet;
 import processing.serial.*;
-
 import cc.arduino.*;
 
-
 public class ArduinoIntegration implements IArduinoIntegration {
+
+  // Change this so that it matches the usb device connected to the Arduino
+  String arduinoUSBDeviceName = "/dev/tty.usbmodem1421";
+
   Arduino arduino;
   
-  ArduinoIntegration() {
-      println(Arduino.list());
-//      arduino = new Arduino(this, "/dev/tty.usbmodem621", 57600);
-//      arduino = new Arduino(this, Arduino.list()[0], 57600);
+  ArduinoIntegration(PApplet applet) {
+      try {
+        arduino = new Arduino(applet, arduinoUSBDeviceName , 57600);
+      }
+      catch(Exception e)
+      {
+        println(e.getMessage());
+      }
   }
   
-  float getVoltageFromPin(int pinNumber) {
+  public float getVoltageFromPin(int pinNumber) {
     if (arduino == null)
       return 0;
     
@@ -22,7 +28,7 @@ public class ArduinoIntegration implements IArduinoIntegration {
     return pinValueInVolts;
   }
 
-  void setupAnalogPinAsInput(int pinNumber) {
+  public void setupAnalogPinAsInput(int pinNumber) {
     if (arduino != null) {
       arduino.pinMode(pinNumber, Arduino.INPUT);
     }
