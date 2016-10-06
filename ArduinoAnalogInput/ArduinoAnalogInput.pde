@@ -20,14 +20,14 @@ int barWidth = 400;
 // Specify the matching Arduino analog pin number and a color for the bar that should represent the input voltage
 BarSpec[] barSpecs = { new BarSpec(0, color(150,150,20)), new BarSpec(1, color(20,100,20)), new BarSpec(2, color(20,20,100)) };
 
-//IArduinoIntegration integration = new ArduinoFakeIntegration();
-IArduinoIntegration integration = new ArduinoIntegration(this);
+IArduinoIntegration arduino = new ArduinoFakeIntegration();
+//IArduinoIntegration arduino = new ArduinoIntegration(this);
 
 
 void setup() {
   size(1200,600);
   for (BarSpec barSpec : barSpecs) {
-    integration.setupAnalogPinAsInput(barSpec.pinNumber);  
+    arduino.setupAnalogPinAsInput(barSpec.pinNumber);  
   }  
 }
 
@@ -36,7 +36,7 @@ void draw() {
   
   int numPinsDrawn = 0;
   for (BarSpec barSpec : barSpecs) {
-    float v = integration.getVoltageFromPin(barSpec.pinNumber);
+    float v = arduino.getVoltageFromPin(barSpec.pinNumber);
     
     // Draw the bar
     int barXPos = barWidth*numPinsDrawn;
