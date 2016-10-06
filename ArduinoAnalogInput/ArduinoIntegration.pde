@@ -13,8 +13,7 @@ public class ArduinoIntegration implements IArduinoIntegration {
       try {
         arduino = new Arduino(applet, arduinoUSBDeviceName , 57600);
       }
-      catch(Exception e)
-      {
+      catch(Exception e) {
         println(e.getMessage());
       }
   }
