@@ -26,7 +26,6 @@ IArduinoIntegration integration = new ArduinoIntegration(this);
 
 void setup() {
   size(1200,600);
-  background(100,100,100);
   for (BarSpec barSpec : barSpecs) {
     integration.setupAnalogPinAsInput(barSpec.pinNumber);  
   }  
