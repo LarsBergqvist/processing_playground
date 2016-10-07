@@ -3,14 +3,14 @@ import g4p_controls.*;
 //IArduinoIntegration arduino = new ArduinoFakeIntegration();
 IArduinoIntegration arduino = new ArduinoIntegration(this);
 
-Digital_GPIO_Pin[] pins = { new Digital_GPIO_Pin("D7",7,0), 
-                            new Digital_GPIO_Pin("D11",11,1), 
-                            new Digital_GPIO_Pin("D12",13,0), 
-                            new Digital_GPIO_Pin("D14",14,0) 
+Digital_GPIO_Pin[] pins = { new Digital_GPIO_Pin("D8",8,0), 
+                            new Digital_GPIO_Pin("D9",9,1), 
+                            new Digital_GPIO_Pin("D10",10,0), 
+                            new Digital_GPIO_Pin("D11",11,0) 
                           };
 
 public void setup() {  
-  size(400, 200);
+  size(400, 150);
 
   int buttonArea = width/pins.length;
   int numDrawnButtons = 0;
