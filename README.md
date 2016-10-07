@@ -3,6 +3,7 @@ A collection of sketches for the Processing IDE. Described in this blog post: ht
 
 # Simple3D
 An example of simple 3D objects in Processing
+<p>
 ![Alt text](https://larsbergqvist.files.wordpress.com/2016/10/processing_3d.png?w=616 "Simple3D")
 
 # ArduinoAnalogInput
