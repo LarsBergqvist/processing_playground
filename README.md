@@ -7,9 +7,11 @@ An example of simple 3D objects in Processing
 ![Alt text](https://larsbergqvist.files.wordpress.com/2016/10/processing_3d.png?w=616 "Simple3D")
 
 # ArduinoAnalogInput
+<p>
 Reads analog input pins from an Arduino and displays the voltages as real-time graph bars
 ![Alt text](https://larsbergqvist.files.wordpress.com/2016/10/arduinoinbars.jpg?w=616 "ArduinoAnalogInput")
 
 # ArduinoDigitalOutput
 Toggle switches that writes to the digital outputs of an Arduino
+<p>
 ![Alt text](https://larsbergqvist.files.wordpress.com/2016/10/processing_digitaloutput1.png?w=616 "ArduinoDigitalOutput")
